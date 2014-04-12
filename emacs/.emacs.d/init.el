@@ -37,6 +37,16 @@
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
+;;; Scrolling without moving the point
+(defun gcm-scroll-down ()
+  (interactive)
+  (scroll-up 1))
+(defun gcm-scroll-up ()
+  (interactive)
+  (scroll-down 1))
+(global-set-key "\M-p" 'gcm-scroll-down)
+(global-set-key "\M-n" 'gcm-scroll-up)
+
 ;;; Cursor and mouse.
 (global-hl-line-mode t)           ; Highlight cursor line
 (blink-cursor-mode 0)             ; No blinking cursor
