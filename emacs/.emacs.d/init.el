@@ -52,7 +52,9 @@
 (blink-cursor-mode 0)             ; No blinking cursor
 (setq mouse-yank-at-point t)      ; Paste at cursor position
 (set-cursor-color "yellow")       ; Cursor color
-(mouse-wheel-mode t)              ; Mouse-wheel enabled
+;;;(mouse-wheel-mode t)              ; Mouse-wheel enabled
+(when (require 'mwheel nil 'noerror)
+  (mouse-wheel-mode t))
 
 ;(setq auto-save-default nil)
 ;(set-default-font "Consolas-11")
@@ -107,7 +109,7 @@
 ;;; go get github.com/nsf/gocode
 
 (defvar gofmt-command "goimports")
-(require 'go-mode-load)
+;;;(require 'go-mode-load)
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;;; yasnippets
