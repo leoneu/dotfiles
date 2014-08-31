@@ -1,7 +1,5 @@
 ;;; Leo's Emacs Init
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
