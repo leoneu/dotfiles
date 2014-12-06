@@ -1,5 +1,9 @@
 ;;; Leo's Emacs Init
 
+(setq warning-suppress-types nil)
+(setq debug-on-error t)
+
+;;; Code:
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -70,6 +74,15 @@
 ;; map f5 to revert buffer.
 (global-set-key [f5] 'revert-buffer)
 
+;; Display time.
+(display-time)
+
+;; Highlight cursor line.
+(global-hl-line-mode 1)
+
+;; Highlight matching parenthesis.
+(global-highlight-parentheses-mode 1)
+
 ;-------------------------------------------------------------------------------
 
 ;; Octave mode
@@ -92,7 +105,6 @@
 ;;;(require 'ess-site)
 ;;;(setq ess-history-directory "~/.R/")
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;             GO LANG
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -111,10 +123,8 @@
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;;; yasnippets
-;(add-to-list 'yas-snippet-dirs "~/.emacs.d/yasnippet-go")
-;(defvar yas-snippet-dirs "~/.emacs.d/yasnippet-go")
-;(require 'yasnippet) ;; not yasnippet-bundle
-;    (yas-global-mode 1)
+(yas-global-mode 1)
+(setq yas-snippet-dirs (append yas-snippet-dirs '("~/.emacs.d/yassnippet-go")))
 
 
 ;;; go autocomplete works with auto-complete mode and company mode.
