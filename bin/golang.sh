@@ -7,6 +7,7 @@ go get -u -x code.google.com/p/rog-go/exp/cmd/godef
 go get -u -x github.com/nsf/gocode
 go get -u -x github.com/kisielk/errcheck
 go get -u -x github.com/dougm/goflymake
+go get -u -x github.com/golang/lint/golint
 
 # Libraries.
 go get -u -x github.com/golang/glog
