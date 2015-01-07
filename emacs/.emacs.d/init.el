@@ -12,6 +12,11 @@
 
 ;-------------------------------------------------------------------------------
 
+;;; Get env path
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-env "GOPATH"))
+
 ;;; disable menu bar
 (menu-bar-mode -1)
 
@@ -85,22 +90,6 @@
 
 ;-------------------------------------------------------------------------------
 
-;; Octave mode
-;; http://cliodhna.cop.uop.edu/~hetrick/localdoc/octave/octave_34.html
-;;
-;; To begin using Octave mode for all `.m' files you visit, add the following lines to a file loaded by Emacs at startup time, typically your `~/.emacs' file:
-(autoload 'octave-mode "octave-mod" nil t)
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
-;; Finally, to turn on the abbrevs, auto-fill and font-lock features automatically, also add the following lines to one of the Emacs startup files:
-(add-hook 'octave-mode-hook
-          (lambda ()
-            (abbrev-mode 1)
-            (auto-fill-mode 1)
-            (if (eq window-system 'x)
-                (font-lock-mode 1))))
-
-
 ;;; R Mode
 ;;;(require 'ess-site)
 ;;;(setq ess-history-directory "~/.R/")
@@ -118,22 +107,27 @@
 ;;; Install the following go packages:
 ;;; go get github.com/nsf/gocode
 
-(defvar gofmt-command "goimports")
-;;;(require 'go-mode-load)
-(add-hook 'before-save-hook 'gofmt-before-save)
+(load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+(defun my-go-mode-hook ()
+  (setq gofmt-command "goimports") ; Use goimports instead of go-fmt
+  (add-hook 'before-save-hook 'gofmt-before-save)  ; Call Gofmt before saving
+  (if (not (string-match "go" compile-command)) ; Customize compile command to run go build
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+  (local-set-key (kbd "M-.") 'godef-jump)) ; Godef jump key binding
+(go-oracle-mode) ; Go Oracle
+(add-hook 'go-mode-hook 'my-go-mode-hook)
 
-;;; yasnippets
-(yas-global-mode 1)
-(setq yas-snippet-dirs (append yas-snippet-dirs '("~/.emacs.d/yassnippet-go")))
-
-
-;;; go autocomplete works with auto-complete mode and company mode.
-;;; https://github.com/nsf/gocode
-(require 'auto-complete)
-(require 'go-autocomplete)
-(require 'auto-complete-config)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-(add-hook 'go-mode-hook 'auto-complete-mode)
+;;; autocomplete using company mode
+(require 'company)                                   ; load company mode
+(require 'company-go)                                ; load company mode go backend
+(setq company-tooltip-limit 20)                      ; bigger popup window
+(setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
+(setq company-echo-delay 0)                          ; remove annoying blinking
+(setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+(add-hook 'go-mode-hook (lambda ()
+                          (set (make-local-variable 'company-backends) '(company-go))
+                          (company-mode)))
 
 ;;; go-errcheck
 ;;; https://github.com/dominikh/go-errcheck.el
@@ -148,7 +142,16 @@
 (require 'go-eldoc) ;; Don't need to require, if you install by package.el
 (add-hook 'go-mode-hook 'go-eldoc-setup)
 
+;;; yasnippets
+(yas-global-mode 1)
+(setq yas-snippet-dirs (append yas-snippet-dirs '("~/.emacs.d/yassnippet-go")))
+
+;; go lint
+(add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
+(require 'golint)
+
 ;-------------------------------------------------------------------------------
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Configuration for cc-mode
