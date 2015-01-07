@@ -1,11 +1,11 @@
 ;;; auto-complete-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads (global-auto-complete-mode auto-complete-mode auto-complete)
-;;;;;;  "auto-complete" "auto-complete.el" (21668 52368 355086 932000))
-;;; Generated autoloads from auto-complete.el
+;;;### (autoloads nil "auto-complete" "../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete.el"
+;;;;;;  "10964929ebe0987bc973b2a813bb26d5")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete.el
 
 (autoload 'auto-complete "auto-complete" "\
 Start auto-completion at current point.
@@ -40,9 +40,9 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 
 ;;;***
 
-;;;### (autoloads (ac-config-default) "auto-complete-config" "auto-complete-config.el"
-;;;;;;  (21668 52368 519086 933000))
-;;; Generated autoloads from auto-complete-config.el
+;;;### (autoloads nil "auto-complete-config" "../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete-config.el"
+;;;;;;  "4b85604161aa7c344fac4c04e6c89d0d")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete-config.el
 
 (autoload 'ac-config-default "auto-complete-config" "\
 
@@ -51,16 +51,17 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("auto-complete-pkg.el") (21668 52368 529726
-;;;;;;  18000))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete-config.el"
+;;;;;;  "../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/auto-complete-20141228.633/auto-complete.el")
+;;;;;;  (21677 35937 967337 843000))
 
 ;;;***
 
-(provide 'auto-complete-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; auto-complete-autoloads.el ends here

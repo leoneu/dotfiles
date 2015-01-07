@@ -1,11 +1,11 @@
 ;;; yasnippet-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet" "yasnippet.el"
-;;;;;;  (21668 52358 127086 886000))
-;;; Generated autoloads from yasnippet.el
+;;;### (autoloads nil "yasnippet" "../../../../../.emacs.d/elpa/yasnippet-20141223.303/yasnippet.el"
+;;;;;;  "f258e028b483113a59cb11f7fc76b3d5")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/yasnippet-20141223.303/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet" "\
 Toggle YASnippet mode.
@@ -46,16 +46,16 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("yasnippet-pkg.el") (21668 52358 139613
-;;;;;;  164000))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/yasnippet-20141223.303/yasnippet-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/yasnippet-20141223.303/yasnippet-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/yasnippet-20141223.303/yasnippet.el")
+;;;;;;  (21677 35884 269905 951000))
 
 ;;;***
 
-(provide 'yasnippet-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; yasnippet-autoloads.el ends here

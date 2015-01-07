@@ -3,9 +3,9 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "flycheck" "flycheck.el" (21677 25371 95446
-;;;;;;  516000))
-;;; Generated autoloads from flycheck.el
+;;;### (autoloads nil "flycheck" "../../../../../.emacs.d/elpa/flycheck-20150106.953/flycheck.el"
+;;;;;;  "6296b0eaeabe8409a0b118b90cf84d16")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/flycheck-20150106.953/flycheck.el
 
 (autoload 'flycheck-info "flycheck" "\
 Open the Flycheck manual.
@@ -210,8 +210,11 @@ Use this together with the `option', `option-list' and
 
 ;;;***
 
-;;;### (autoloads nil nil ("flycheck-ert.el" "flycheck-pkg.el") (21677
-;;;;;;  25371 202677 636000))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/flycheck-20150106.953/flycheck-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20150106.953/flycheck-ert.el"
+;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20150106.953/flycheck-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/flycheck-20150106.953/flycheck.el")
+;;;;;;  (21677 35934 246424 569000))
 
 ;;;***
 

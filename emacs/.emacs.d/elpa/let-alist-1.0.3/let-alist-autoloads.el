@@ -1,11 +1,11 @@
 ;;; let-alist-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads (let-alist) "let-alist" "let-alist.el" (21668 52360
-;;;;;;  7086 896000))
-;;; Generated autoloads from let-alist.el
+;;;### (autoloads nil "let-alist" "../../../../../.emacs.d/elpa/let-alist-1.0.3/let-alist.el"
+;;;;;;  "4f319764b4d4dec86f55513680351dae")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/let-alist-1.0.3/let-alist.el
 
 (autoload 'let-alist "let-alist" "\
 Let-bind dotted symbols to their cdrs in ALIST and execute BODY.
@@ -42,16 +42,15 @@ displayed in the example above.
 
 ;;;***
 
-;;;### (autoloads nil nil ("let-alist-pkg.el") (21668 52360 16085
-;;;;;;  22000))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/let-alist-1.0.3/let-alist-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/let-alist-1.0.3/let-alist.el")
+;;;;;;  (21677 35930 709606 397000))
 
 ;;;***
 
-(provide 'let-alist-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; let-alist-autoloads.el ends here

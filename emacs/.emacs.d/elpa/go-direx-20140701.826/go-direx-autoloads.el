@@ -1,11 +1,11 @@
 ;;; go-direx-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
+(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads (go-direx-switch-to-buffer go-direx-pop-to-buffer)
-;;;;;;  "go-direx" "go-direx.el" (21470 31196 0 0))
-;;; Generated autoloads from go-direx.el
+;;;### (autoloads nil "go-direx" "../../../../../.emacs.d/elpa/go-direx-20140701.826/go-direx.el"
+;;;;;;  "51c46b4cfe18b20d7ee1fbe03d05d127")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/go-direx-20140701.826/go-direx.el
 
 (autoload 'go-direx-pop-to-buffer "go-direx" "\
 
@@ -19,16 +19,15 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("go-direx-pkg.el") (21470 31196 523175
-;;;;;;  0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/go-direx-20140701.826/go-direx-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/go-direx-20140701.826/go-direx.el")
+;;;;;;  (21677 35940 426682 952000))
 
 ;;;***
 
-(provide 'go-direx-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; go-direx-autoloads.el ends here
