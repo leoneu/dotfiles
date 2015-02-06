@@ -40,4 +40,4 @@
 [format]
 	numbered = auto
 [credential]
-    helper = osxkeychain
+	helper = store
