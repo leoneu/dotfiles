@@ -41,6 +41,7 @@
     hemisu-theme
     highlight-current-line
     highlight-parentheses
+    markdown-mode
     pkg-info
     solarized-theme
     soothe-theme
@@ -122,8 +123,9 @@
   (mouse-wheel-mode t))
 
 ;(setq auto-save-default nil)
-;(set-default-font "Consolas-11")
-(set-frame-font "Anonymous Pro-14")
+(set-default-font "Consolas-10")
+;(set-frame-font "Anonymous Pro-12")
+;(set-frame-font "DejaVu Sans Mono-12")
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -145,6 +147,13 @@
 
 ;; Highlight matching parenthesis.
 (global-highlight-parentheses-mode 1)
+
+;; Markdown
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;-------------------------------------------------------------------------------
 
