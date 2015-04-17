@@ -123,8 +123,9 @@
   (mouse-wheel-mode t))
 
 ;(setq auto-save-default nil)
-;(set-default-font "Consolas-11")
-(set-frame-font "Anonymous Pro-14")
+(set-default-font "Consolas-10")
+;(set-frame-font "Anonymous Pro-12")
+;(set-frame-font "DejaVu Sans Mono-12")
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
