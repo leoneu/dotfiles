@@ -5,3 +5,4 @@ ln -sf $HOME/dotfiles/git/.gitconfig $HOME
 ln -sf $HOME/dotfiles/git/.gitignore_global $HOME
 ln -sf $HOME/dotfiles/tmux/.tmux.conf $HOME
 ln -sf $HOME/dotfiles/tmux/.tmux $HOME
+ln -sf $HOME/dotfiles/.aspell.en.pws $HOME
