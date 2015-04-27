@@ -155,6 +155,9 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; Don't show warning message.
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 ;-------------------------------------------------------------------------------
 
 ;;; R Mode
@@ -174,7 +177,8 @@
 ;;; Install the following go packages:
 ;;; go get github.com/nsf/gocode
 
-(load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+;;;(load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+
 (defun my-go-mode-hook ()
   (setq gofmt-command "goimports") ; Use goimports instead of go-fmt
   (add-hook 'before-save-hook 'gofmt-before-save)  ; Call Gofmt before saving
@@ -182,7 +186,7 @@
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
   (local-set-key (kbd "M-.") 'godef-jump)) ; Godef jump key binding
-(go-oracle-mode) ; Go Oracle
+;;;(go-oracle-mode) ; Go Oracle
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 ;;; autocomplete using company mode
