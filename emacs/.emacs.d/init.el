@@ -43,6 +43,7 @@
     highlight-parentheses
     markdown-mode
     pkg-info
+    qml-mode
     solarized-theme
     soothe-theme
     tango-2-theme
@@ -223,6 +224,9 @@
 
 ;-------------------------------------------------------------------------------
 
+;;; Misc modes
+(autoload 'qml-mode "qml-mode" "Editing Qt Declarative." t)
+(add-to-list 'auto-mode-alist '("\\.qml$" . qml-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Configuration for cc-mode
