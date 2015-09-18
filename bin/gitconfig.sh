@@ -1,12 +1,12 @@
-#!/bin/zsh -x
+#!zsh -x
 
 cd ~/dotfiles
 
 user_name=$(git config --global --get user.name)
-if [[ ! -n $user_name ]] && git config --global user.name "Leo Neumeyer"
+[[ ! -n $user_name ]] && git config --global user.name "Leo Neumeyer"
 
 user_email=$(git config --global --get user.email)
-if [[ ! -n $user_email ]] && git config --global user.name "leoneu@apache.org"
+[[ ! -n $user_email ]] && git config --global user.email "leoneu@apache.org"
 
 
 git config --global core.excludesfile "~/.gitignore_global"
@@ -36,4 +36,3 @@ git config --global pager.status true
 git config --global pager.show-branch true
 git config --global format.numbered auto
 git config --global credential.helper store
-
